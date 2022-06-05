@@ -1,10 +1,10 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelPlusUI-SnowCone/manifest -b snowcone-12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/amritoj2/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/amritoj2/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch aosp_r5x-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
